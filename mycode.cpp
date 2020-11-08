@@ -7,13 +7,17 @@
 #include<string> // to import and use String library 
 using namespace std ;
 int main()
-{    string  section , dgree , Class; // Here we Defined the variable as String
-	char name[30]; // here the user may enter his full name 
+{  
+	string  section , dgree , Class ,name , exit; // Here we Defined the variable as String
+	 // here the user may enter his full name 
 	int score , ID ;  // Define score and ID as integer
+	
+	do{
+	
 	cout<<"Enter Your Name : "; // Dislapy A message on screen and wait for user to input his Name
-	cin.get(name , 30); /* why .get() ?? i used get function to skip from space when the user enter his full name   */ 
+	cin>>name ;  
 	cout<<"Enter Your ID : "; cin >> ID ; // ask user to Enter his ID
-	cout<<"Select A if you are in Control Class  "<<endl<<"Select T if you are in Communication class "<< endl<< "Select C if you are in computer Engneering "<<endl;
+	cout<<"Select 'A'  Control Class  "<<endl<<"Select 'T' Communication class "<< endl<< "Select 'C' computer Engneering "<<endl;
 	cin >> section ; // For input the Section
 	if (section == "A") // if condition statment
 	{
@@ -25,9 +29,11 @@ int main()
 	else if(section == "C"){
 		Class = "computer Engneering" ;
 	}
-	else 
+	else {
 		cout<<"sorry! Department not Found ! try again....."<<endl;
-	cout<<"Enter Your Score : "; cin >> score ; // here the user will input his Score
+	}
+	
+	cout<<"Enter The student Score : "; cin >> score ; // here the user will input his Score
 	switch(score) // Switch statement to check if score between 90 and 100
 	{
 	case 90 ... 100 :
@@ -48,10 +54,16 @@ int main()
 	default :
 	cout << "Invalid Score" ;
 	}
-	cout<< "\n"<<"Student Information "<<"\n";
+	cout<< "\n"<<"=====Student Information====="<<"\n";
 	// Finaly This Line Will Display all the information that user Entered before
 	cout << "Name : "<< name << "\n"<<"ID : "<< ID << "\n"<<"Department : "<< Class << "\n"<<"Dgree : "<< dgree << endl ;
-	// I hope you Like My Code
-	// Thanks ^-^
+
+	cout<<"Type 'Exit' to stop ! or Type 'No' to Continue... "<<endl;
+	cin >> exit ;
+
+	}while ( exit != "Exit" );
+	cout<<" \n";
+
 	return 0;
+	
 }
